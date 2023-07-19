@@ -6,7 +6,7 @@ ARG TRAEFIK_VERSION
 ####################################################################################################
 FROM alpine:${ALPINE_VERSION}
 
-ARG TARGET_ARCH
+ARG TARGETARCH
 ARG TRAEFIK_VERSION
 ARG UID=915
 ARG GID=915
@@ -15,7 +15,7 @@ RUN apk add --no-cache \
     ca-certificates \
     tzdata
 
-RUN wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/releases/download/v${TRAEFIK_VERSION}/traefik_v${TRAEFIK_VERSION}_linux_${TARGET_ARCH}.tar.gz" && \
+RUN wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/releases/download/v${TRAEFIK_VERSION}/traefik_v${TRAEFIK_VERSION}_linux_${TARGETARCH}.tar.gz" && \
     tar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik && \
     rm -f /tmp/traefik.tar.gz && \
     chmod +x /usr/local/bin/traefik
