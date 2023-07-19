@@ -12,7 +12,7 @@ ARG UID=915
 ARG GID=915
 
 RUN apk add --no-cache \
-    ca-certifciates \
+    ca-certificates \
     tzdata
 
 RUN wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/releases/download/v${TRAEFIK_VERSION}/traefik_v${TRAEFIK_VERSION}_linux_${TARGET_ARCH}.tar.gz" && \
