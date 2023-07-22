@@ -23,7 +23,7 @@ RUN wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/rele
 COPY --chmod=0755 entrypoint.sh /
 
 RUN addgroup -S -g ${GID} traefik && \
-    adduser -S -H -D -G traefik -u ${UID} -s /sbin/nologin traefik && \
+    adduser -S -H -D -G traefik -u ${UID} -g "" -s /sbin/nologin traefik && \
     mkdir -p /etc/traefik /var/lib/traefik/acme /var/log/traefik && \
     chown -R traefik:traefik /var/log/traefik && \
     chown -R traefik:traefik /var/lib/traefik && \
