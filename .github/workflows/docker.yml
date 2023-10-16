@@ -13,9 +13,9 @@ jobs:
     uses: thesilkky/workflows/.github/workflows/docker-build-push.yml@main
     with:
       image: thesilkky/traefik
-      image-version: '3.0.0-beta3'
+      image-version: '3.0.0-beta4'
       context: .
-      build-args: TRAEFIK_VERSION=3.0.0-beta3
+      build-args: TRAEFIK_VERSION=3.0.0-beta4
       platforms: linux/amd64,linux/arm64
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
